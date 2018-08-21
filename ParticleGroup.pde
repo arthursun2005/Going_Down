@@ -1,6 +1,6 @@
 int PARTICLE_FIXED = 1;
 int PARTICLE_COLORMIXING = 2;
-int PARTICLE_ZOMBIE = 3;
+int PARTICLE_ZOMBIE = 4;
 
 class ParticleGroup
 {
@@ -11,6 +11,25 @@ class ParticleGroup
   ParticleGroup(){}
   ParticleGroup(int f){
     Flag = f;
+  }
+  final boolean hasFlag(int f){
+    return (Flag & f) != 0;
+  }
+  final boolean hasAnyFlags(int[] f){
+    for(int i=0;i<f.length;i++){
+      if(hasFlag(f[i])){
+        return true;
+      }
+    }
+    return false;
+  }
+  final boolean hasAllFlags(int[] f){
+    for(int i=0;i<f.length;i++){
+      if(!hasFlag(f[i])){
+        return false;
+      }
+    }
+    return true;
   }
 };
 

@@ -1,5 +1,6 @@
 void setup(){
   fullScreen(JAVA2D);
+  smooth();
 }
 
 void draw(){
