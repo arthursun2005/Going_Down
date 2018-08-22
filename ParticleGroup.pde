@@ -1,11 +1,11 @@
-int PARTICLE_FIXED = 1;
-int PARTICLE_COLORMIXING = 2;
-int PARTICLE_ZOMBIE = 4;
+int PARTICLE_FIXED = (1 << 0);
+int PARTICLE_COLORMIXING = (1 << 1);
+int PARTICLE_ZOMBIE = (1 << 2);
 
 class ParticleGroup
 {
   int Flag = 0;
-  float repulsive = 16f;
+  float repulsive = 0.16f;
   float pressure = 0.75f;
   float viscous = 0.2f;
   ParticleGroup(){}

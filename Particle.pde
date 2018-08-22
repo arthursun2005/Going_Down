@@ -5,11 +5,9 @@ class Particle
   PVector f = new PVector();
   color c = color(255);
   float pressure;
-  ParticleGroup group;
+  ParticleGroup group = PARTICLEGROUP_NORMAL;
   Particle(){}
-  final void Step(float dt){
-    v.add(f);
-    p.x += v.x * dt;
-    p.y += v.y * dt;
+  Particle(float x, float y){
+    p.set(x,y);
   }
 };
